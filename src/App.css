@@ -1,0 +1,283 @@
+main {
+    height: 100%;
+    min-height: 100vh;
+    background-color: #05292E;
+}
+
+.header {
+    position: relative;
+}
+
+.header__img {
+    height: 450px;
+    object-fit: cover;
+}
+
+.header__logo {
+    position: absolute;
+    width: 522px;
+    top: 250px;
+    right: 15px;
+}
+
+.form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;  
+}
+
+.form__form {
+    margin: 2em;
+    display: flex;
+    align-items: center;
+}
+
+.form__input{
+    height: 3em;
+    width: 230px;
+    font-size: 1em;
+    font-weight: 600;
+    border: none;
+    color: #072226;
+    padding-left: 10px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    box-shadow: 5px 5px 10px rgb(19, 19, 19);
+}
+
+.form__button {
+    height: 2.5em;
+    font-size: 1.2em;
+    font-weight: 600;
+    padding: 0.6em 1.2em;
+    border: none;
+    color: white;
+    background-color: #71A821;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    box-shadow: 5px 5px 10px rgb(19, 19, 19);
+}
+
+.load {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #05292E;
+}
+
+.load__container {
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr;
+}
+
+.load__img1,
+.load__img2 {
+  width: 500px;
+  height: 500px;
+  grid-column: 1/2;
+  grid-row: 1/2;
+  animation-duration: 20s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+.load__img1 {
+  animation-name: rotation1;
+}
+
+.load__img2 {
+  animation-name: rotation2;
+}
+
+@keyframes rotation1 {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes rotation2 {
+    from {
+        transform: rotate(-0deg);
+    }
+    to {
+        transform: rotate(-360deg);
+    }
+}
+
+.location {
+    width: 500px;
+    height: 150px;
+    margin: 25px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column; 
+    border-radius: 20px;
+    background-color: #072226;
+    box-shadow: 5px 5px 10px rgb(19, 19, 19);
+}
+
+.location__name {
+    text-align: center;
+    font-weight: 700;
+    color: #00d547;
+}
+
+.location__list {
+    display: flex;
+    gap: 2.5em;
+}
+
+.location__item {
+    display: flex;
+    flex-direction: column;
+}
+
+.location__label {
+    font-size: 0.8em;
+    text-align: center;
+    margin-bottom: 0.8em; 
+}
+
+.location__value {
+    font-weight: 500;
+    text-align: center;
+    color: #aaa;
+}
+    
+.resident__container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2.5em;
+    margin-bottom: 2.5em;
+}
+
+.resident {
+    width: 100%;
+    max-width: 300px;
+    background-color: #072226;
+    color: white;
+    border-radius: 1em;
+    overflow: hidden;
+    transition: transform 100ms ease;
+    box-shadow: 5px 5px 10px rgb(19, 19, 19);
+}
+
+.resident__header {
+    position: relative;
+}
+
+.resident:hover {
+    transform: scale(1.03);
+}
+
+.resident__status {
+    position: absolute;
+    bottom: 1em;
+    background-color: #072226;
+    width: 35%;
+    padding: 0.3em 0.7em;
+    border-radius: 0 0.5em 0.5em 0;
+    display: flex;
+    gap: 0.7em;
+    align-items: center;
+}
+
+.resident__status__circle {
+    display: block;
+    width: 14px;
+    aspect-ratio: 1;
+    background-color: #aaa;
+    border-radius: 50%;
+}
+
+.Alive {
+    background-color: #00d547;
+}
+
+.Dead {
+    background-color: red;
+}
+
+.resident__body {
+    padding: 1.5em 1em 2.5em;
+}
+
+.resident__name {
+    text-align: center;
+    margin-bottom: 0.5em;
+    font-weight: 700;
+    color: #00d547;
+}
+
+.resident__separator {
+    margin-bottom: 0.5em;
+    border-color: #aaa3;
+}
+
+.resident__list {
+    display: grid;
+    gap: 0.7em;
+}
+
+.resident__item {
+    display: flex;
+    flex-direction: column;
+}
+
+.resident__label {
+    font-size: 0.8em;
+    padding-left: 1em;
+    color: #aaa;
+}
+
+.resident__value {
+    font-weight: 500;
+    margin-bottom: 0.5em;
+}
+
+@media screen and (max-width: 600px) {
+    .header__logo {
+        width: 322px;
+        top: 330px;
+    }
+
+    .load__img1,
+    .load__img2 {
+        width: 300px;
+        height: 300px;
+    }
+
+    .location  {
+        width: 300px;
+        height: 320px;
+    }
+
+    .location__list  {
+        flex-direction: column;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .header__logo {
+        width: 422px;
+        top: 290px;
+    }
+
+    .load__img1,
+    .load__img2 {
+        width: 400px;
+        height: 400px;
+    }
+}
